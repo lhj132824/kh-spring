@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="spring02_annotation"/>
+<aop-project name="spring03_aop"/>
+<aop-project name="spring04_mybatis"/>
+<aop-project name="spring01_bean"/>
+</aop-reference-model>

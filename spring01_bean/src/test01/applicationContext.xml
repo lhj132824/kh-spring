@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ 	<!-- bean : Spring이 관리하는 자바 객체 -->
+ 	
+ 	<!-- 기본생성자 매개변수가 있는 생성자를 부를땐 constructor -->
+	<bean id="ha" class="test01.Address">
+		<constructor-arg name="name" value="하명도"/>
+		<constructor-arg name="address" value="서울시 강남구"/>
+		<constructor-arg name="phone" value="010-1111-1111"/>
+	</bean>
+	
+	<!-- setter를 부를 때는 property -->
+	<bean id="lee" class="test01.Address">
+		<property name="name" value="이제동"/>
+		<property name="address" value="논산"/>
+		<property name="phone" value="010-2222-2222"/>
+	</bean>
+	
+	<!-- (참고만하기)index가 없어도 순서대로 알아서 넣어줌 -->
+	<bean id="kim" class="test01.Address">
+		<constructor-arg index="0" value="김정우"/>
+		<constructor-arg index="1" value="서울시 종로구"/>
+		<constructor-arg index="2" value="010-3333-3333"/>
+	</bean>
+
+	
+</beans>

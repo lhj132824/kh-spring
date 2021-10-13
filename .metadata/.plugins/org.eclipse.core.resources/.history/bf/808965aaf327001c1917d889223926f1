@@ -1,0 +1,20 @@
+package test03;
+
+import java.util.Date;
+
+public class BeanTest {
+	
+	private Date date;
+	private Score score;
+	
+	public BeanTest() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public BeanTest(Date date) {
+		this.date = date;
+		System.out.println(date + ": 매개변수가 있는 생성자 호출");
+	}
+	
+	
+}

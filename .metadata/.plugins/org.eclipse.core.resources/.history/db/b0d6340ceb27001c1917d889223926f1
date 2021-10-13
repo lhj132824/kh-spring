@@ -1,0 +1,10 @@
+package test03;
+import java.util.Date;
+
+public class DateFactory {
+	public static Date getInstance() {
+		Date day = new Date();
+		return day;
+		System.out.println(day);
+	}
+}

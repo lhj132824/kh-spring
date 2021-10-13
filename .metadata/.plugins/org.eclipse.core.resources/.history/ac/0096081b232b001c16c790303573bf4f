@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<context:component-scan base-package="aop02"/>
+	<aop:aspectj-autoproxy/>
+	<aop:config>
+		<aop:aspect ref="myAspect">
+			<aop:pointcut expression="execution(* *(..))" id="develop"/>
+		</aop:aspect>
+	</aop:config>
+	
+	<!-- 이 코드를 aop태그를 활용해 쉽게 표현하기 
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>	
+	<bean class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+	 	<property name="advice" ref="myAspect"/>
+	 	<property name="expression" value="execution(public * aop01.*.*(..))"/> 
+	 </bean>
+	 --> 
+	 
+</beans>

@@ -1,0 +1,34 @@
+package aop03;
+
+import org.aopalliance.intercept.MethodInterceptor;
+import org.aopalliance.intercept.MethodInvocation;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Component
+@Aspect
+public class MyAspect {
+	
+	@Before(value = "execution(* *(..))")
+	public void before() {
+		System.out.println("출근 카드를 찍는다.");
+	}
+	
+	@After(value = "execution(* *(..))")
+	public void after() {
+		System.out.println("집에 간다.");
+	}
+	
+	@AfterReturning(value = "execution(* *(..))")
+	public void afterReturning() {              //정상성공시 afterReturning
+		System.out.println("퇴근 카드를 찍는다.");
+	}
+	
+	@AfterThrowing(value = "execution(* *(..))")
+	public void afterThrowing() {               //예외발생시 afterThrowing
+		System.out.println("쉬는 날이었다.");
+	}
+}

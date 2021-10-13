@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<bean id="wheelBean" class="test01.Wheel">
+		<property name="radius" value="20"></property>
+	</bean>
+	<bean id="wheelBean2" class="test01.Wheel">
+		<property name="radius" value="100"></property>
+	</bean>
+	<!-- test01아래에 @component 가 있는 클래스들을 알아서 등록 id는 클래스명을 따라감-->
+	<context:component-scan base-package="test01"/>
+</beans>

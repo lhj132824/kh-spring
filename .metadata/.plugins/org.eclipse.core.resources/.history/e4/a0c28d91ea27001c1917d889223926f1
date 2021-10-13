@@ -1,0 +1,14 @@
+package test03;
+
+import java.util.Calendar;
+import java.util.Date;
+
+import test02.Week;
+
+public class DateFactory {
+public static Date getInstance() {
+		
+		Calendar cal = Calendar.getInstance();
+		Date day = cal.get(Calendar.DATE);
+		return day;
+}
