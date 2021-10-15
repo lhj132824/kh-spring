@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/mybatis-server-config" deployDir="wtpwebapps" hostname="localhost" id="mybatis-server" name="mybatis-server" runtime-id="mybatis-server" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="2">
+  <server auto-publish-setting="1" auto-publish-time="1" configuration-id="/Servers/mybatis-server-config" deployDir="wtpwebapps" hostname="localhost" id="mybatis-server" name="mybatis-server" runtime-id="mybatis-server" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="3">
     <list key="modules" value0="spring04_mybatis::org.eclipse.jst.jee.server:spring04_mybatis::jst.web::3.1"/>
+    <list key="publishers" value0="org.eclipse.jst.server.tomcat.ui.context:false"/>
   </server>
 </servers>
