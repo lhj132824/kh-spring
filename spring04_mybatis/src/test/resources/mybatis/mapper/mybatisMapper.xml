@@ -56,6 +56,156 @@
   	</delete>
   	
   	<update id="update">
-  		update member set password = "ppppp" where user_id = #{userId}
+  		update member 
+  		set password = #{password} 
+  		where user_id = #{userId}
+  	</update>
+  	
+  	
+  	<!-- 
+  	마이바티스의 기본 statement 객체는 PreparedStatement이다.
+  	statementType 속성을 사용해 변경이 가능하다.
+  	statement, prepared, callable
+  	 -->
+  	<update id="procedure" statementType="CALLABLE">
+  		{call sp_rent_extend(#{rbIdx, mode=IN})}
+  	</update>
+  	
+  	
+  	
+  	
+  	
+  	
+  	<!-- 실습 -->
+  	<insert id="test01">
+  		insert into book(bk_idx, author, title)
+  		values(sc_bk_idx.nextval, #{author}, #{title})
+  	</insert>
+  	
+  	<update id="test02">
+  		update rent_book 
+  		set extension_cnt = #{num1} 
+  		where extension_cnt &gt;= #{num2}
+  	</update>
+  	
+  	<delete id="test03">
+  		delete from member where reg_date &lt; #{date}
+  	</delete>
+  	
+  	<select id="test04" resultType="map">
+  		select rownum, v.*
+  		from (select * from book order by rent_cnt desc) v 
+  		where rownum &lt; 4 
+  	</select>
+  	
+  	
+  	<!-- 동적쿼리 -->
+  	<select id="dynamicIf" resultType="map">
+  		select * from book where
+  		<if test="filter == 'info'">
+  			info like '%'||#{keyword}||'%'
+  		</if>
+  		<if test="filter == 'author'">
+  			author like '%'||#{keyword}||'%'
+  		</if>
+  	</select>
+  	
+  	<select id="dynamicChoose" resultType="map">
+  		select * from book where
+  		<choose>
+  			<when test="filter == 'info'">
+	  			info like '%'||#{keyword}||'%'
+	  		</when>
+	  		<when test="filter == 'author'">
+	  			author like '%'||#{keyword}||'%'
+	  		</when>
+	  		<otherwise>
+	  			title like '%'||#{keyword}||'%'
+	  		</otherwise>
+  		</choose>
+  	</select>
+  	
+  	<select id="dynamicForeachAndSetTagWithList" resultType="map">
+  		select * from book
+  		<where>
+  		  	<foreach collection="filters" item="filter">
+	  			<if test="filter=='title'">
+	  				or title like '%'||#{keyword}||'%'
+	  			</if>
+	  			<if test="filter=='info'">
+	  				or info like '%'||#{keyword}||'%'
+	  			</if>
+	  			<if test="filter=='author'">
+	  				or author like '%'||#{keyword}||'%'
+	  			</if>
+	  		</foreach>
+  		</where>
+  	</select>
+  	
+  	<select id="dynamicForeachWithList" resultType="map">
+  		select * from book
+  		where title in
+  		<foreach collection="list" item="title" index="idx" open="(" close=")" separator=",">
+  			#{title}
+  		</foreach>
+  	</select>
+  	
+  	<!-- 
+  		#{} vs ${} 
+  		#{} : PreparedStatement에서 쿼리템플릿을 완성 시킨 다음, 파라미터값을 전달받아 쿼리를 완성
+  			  문자열 이스케이프처리가 자동으로 된다. -> SQL injection 공격에 안전하다.
+  	 	${} : 쿼리템플릿이 생성되는 시점에 파라미터로 전달된 값을 사용해서 쿼리템플릿을 완성
+  	 		  문자열 이스케이프처리가 되지 않음 -> SQL injection 공격에 취약하다.
+  	 -->
+  	
+  	<!-- collection에 담기는 객체가 map일 경우 index속성에 선언한 변수에 key값이 담김 -->
+  	<insert id="insertTemplate">
+  		insert into ${tableName}
+  		<foreach collection="data" index="key" open="(" close=")" separator=",">
+  			${key}
+  		</foreach>
+  		values
+  		<foreach collection="data" item="val" open="(" close=")" separator=",">
+  			#{val}
+  		</foreach>
+  	</insert>
+  	
+  	<insert id="insertTemplate2">
+  		insert into ${tableName}
+  		<if test="sec == null">
+  			<foreach collection="data" index="key" open="(" close=")" separator=",">
+	  			${key}
+	  		</foreach>
+	  		values
+	  		<foreach collection="data" item="val" open="(" close=")" separator=",">
+	  			#{val}
+	  		</foreach>
+  		</if>
+  		<if test="sec != null">
+  			<foreach collection="data" index="key" open="(" close="," separator=",">
+	  			${key}
+	  		</foreach>
+	  		${sec.colName} ) values
+	  		<foreach collection="data" item="val" open="(" close="," separator=",">
+	  			#{val}
+	  		</foreach>
+	  		${sec.val} )
+  		</if>
+  	</insert>
+  	
+  	<update id="dynamicSet">
+  		update member 
+  		<set>
+  			<if test="password != null">
+	  			password = #{password}
+	  		</if>
+	  		<if test="email != null">
+	  			, email = #{email}
+	  		</if>
+	  		<if test="tell != null">
+	  			, tell = #{tell}
+	  		</if>
+  		</set>
+  		where user_id = #{userId}
   	</update>
   </mapper>

@@ -19,4 +19,5 @@
             <entry path="C:\Program Files\openjdk-1.8\java-1.8.0-openjdk-1.8.0.282-1.b08.ojdkbuild.windows.x86_64\jre\lib\endorsed"/>
         </endorsedDirs>
     </libraryInfo>
+    <libraryInfo home="C:\Program Files\openjdk-11\java-11-openjdk-11.0.12.7-1.windows.ojdkbuild.x86_64" version="11.0.12"/>
 </libraryInfos>
