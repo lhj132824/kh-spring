@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="spring05_mybatis_interface"/>
 			<item value="spring03_aop"/>
 			<item value="spring02_annotation"/>
 			<item value="spring01_bean"/>
@@ -9,6 +10,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="spring05_mybatis_interface"/>
 			<item value="spring03_aop"/>
 			<item value="spring02_annotation"/>
 			<item value="spring01_bean"/>

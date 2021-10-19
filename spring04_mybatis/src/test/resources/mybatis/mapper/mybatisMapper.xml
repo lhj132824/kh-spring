@@ -208,4 +208,13 @@
   		</set>
   		where user_id = #{userId}
   	</update>
+  	
+  	<insert id="procedureUseTypeHandler">
+  		{call sp_rent_insert(
+	  		#{userId, mode=IN}
+	  		,#{title, mode=IN}
+	  		,#{rentBookCnt, mode=IN}
+	  		,#{bkIdxs, mode=IN, typeHandler=com.kh.spring.common.mybatis.BkIdxsTypeHandler}
+  		)}
+  	</insert>
   </mapper>

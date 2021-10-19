@@ -4,4 +4,6 @@
 <aop-project name="spring03_aop"/>
 <aop-project name="spring04_mybatis"/>
 <aop-project name="spring01_bean"/>
+<aop-project name="spring06_toyProject"/>
+<aop-project name="spring05_mybatis_interface"/>
 </aop-reference-model>

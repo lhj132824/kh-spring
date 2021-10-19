@@ -4,4 +4,8 @@
     <list key="modules" value0="spring04_mybatis::org.eclipse.jst.jee.server:spring04_mybatis::jst.web::3.1"/>
     <list key="publishers" value0="org.eclipse.jst.server.tomcat.ui.context:false"/>
   </server>
+  <server auto-publish-setting="1" auto-publish-time="1" configuration-id="/Servers/toy-server-config" deployDir="wtpwebapps" hostname="localhost" id="toy-server" name="toy-server" runtime-id="Apache Tomcat v8.5" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="4">
+    <list key="modules" value0="spring06_toyProject::org.eclipse.jst.jee.server:spring06_toyProject::jst.web::3.1"/>
+    <list key="publishers" value0="org.eclipse.jst.server.tomcat.ui.context:false"/>
+  </server>
 </servers>
