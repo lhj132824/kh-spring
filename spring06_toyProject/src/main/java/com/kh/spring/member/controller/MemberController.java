@@ -1,5 +1,7 @@
 package com.kh.spring.member.controller;
 
+import java.util.UUID;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -86,7 +89,11 @@ public class MemberController {
 	}
 	
 	@PostMapping("join")
-	public String join(@Validated JoinForm form,Errors errors, Model model) { //반드시 검증될 객체 바로 뒤에 작성
+	public String join(@Validated JoinForm form
+			,Errors errors
+			,Model model
+			,HttpSession session
+			,RedirectAttributes redirectAttr) { //반드시 검증될 객체 바로 뒤에 작성
 		
 		ValidateResult vr = new ValidateResult();
 		model.addAttribute("error",vr.getError());
@@ -94,8 +101,36 @@ public class MemberController {
 			vr.addErrors(errors);
 			return "member/join";
 		}
+		
+		//token 생성
+		String token = UUID.randomUUID().toString();
+		session.setAttribute("persistUser", form);
+		session.setAttribute("persistToken", token);
+
+		memberService.authenticateByEmail(form,token);
+		redirectAttr.addFlashAttribute("message","이메일이 발송되었습니다.");
+		
+		return "redirect:/";
+	}
+	
+	@GetMapping("join-impl/{token}")
+	public String joinImpl(@PathVariable String token
+			,@SessionAttribute(value = "persistToken", required = false) String persistToken
+			,@SessionAttribute(value = "persistUser", required = false) JoinForm form
+			,HttpSession session
+			,RedirectAttributes redirectAttrs) {
+		
+		logger.debug(session.getId());
+		
+		if(!token.equals(persistToken)) {
+			throw new HandlableException(ErrorCode.AUTHENTICATION_FAILED_ERROR);
+		}
+		
 		memberService.insertMember(form);
-		return "index";
+		redirectAttrs.addFlashAttribute("message","회원가입을 환영합니다. 로그인 해주세요");
+		session.removeAttribute("persistToken");
+		session.removeAttribute("persistUser");
+		return "redirect:/member/login";
 	}
 	
 	@PostMapping("join-json")

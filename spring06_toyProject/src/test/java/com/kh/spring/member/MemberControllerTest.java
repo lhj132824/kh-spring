@@ -30,7 +30,7 @@ import javax.servlet.http.Cookie;
 public class MemberControllerTest {
    
    //MockMvc : http 요청 및 응답 상황 테스트를 위한 객체
-	Logger logger = LoggerFactory.getLogger(this.getClass());
+   Logger logger = LoggerFactory.getLogger(this.getClass());
 	
    @Autowired
    WebApplicationContext wac;

@@ -2,6 +2,7 @@ eclipse.preferences.version=1
 org.eclipse.jdt.core.classpathVariable.JRE_LIB=C\:/Program Files/openjdk-11/java-11-openjdk-11.0.12.7-1.windows.ojdkbuild.x86_64/lib/jrt-fs.jar
 org.eclipse.jdt.core.classpathVariable.JRE_SRC=C\:/Program Files/openjdk-11/java-11-openjdk-11.0.12.7-1.windows.ojdkbuild.x86_64/lib/src.zip
 org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
+org.eclipse.jdt.core.classpathVariable.M2_REPO=C\:/Users/lhj13/.m2/repository
 org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
 org.eclipse.jdt.core.compiler.release=disabled
