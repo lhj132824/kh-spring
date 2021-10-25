@@ -161,8 +161,8 @@ public class MemberController {
 	}
 	
 	@GetMapping("mypage")
-	public String mypage(@CookieValue(name = "JSESSIONID") String sessionId
-					   , @SessionAttribute(name = "authentication") Member member, HttpServletResponse response) {
+	public String mypage(@CookieValue(name = "JSESSIONID", required = false) String sessionId
+					   , @SessionAttribute(name = "authentication", required = false) Member member, HttpServletResponse response) {
 		
 		//Cookie 생성 및 응답헤더에 추가
 		CookieGenerator cookieGenerator = new CookieGenerator();
