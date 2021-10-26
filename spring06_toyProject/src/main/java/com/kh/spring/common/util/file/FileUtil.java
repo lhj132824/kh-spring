@@ -33,7 +33,7 @@ public class FileUtil {
 		int month = cal.get(Calendar.MONTH)+1;
 		int date = cal.get(Calendar.DAY_OF_MONTH);
 		
-		return year + "\\" + month + "\\" + date + "\\";
+		return year + "/" + month + "/" + date + "/";
 	}
 	
 	private String createUploadPath(String subPath) {

@@ -42,7 +42,7 @@ public class BoardControllerTest {
 			   new MockMultipartFile("files", "OFN2.txt", null, "secondFile".getBytes());
 	   
 	   Member member = new Member();
-	   member.setUserId("ho");
+	   member.setUserId("HO");
 	   
 	   mockMvc.perform(multipart("/board/upload")
 			   .file(file1)

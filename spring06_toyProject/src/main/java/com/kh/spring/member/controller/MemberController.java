@@ -34,6 +34,7 @@ import com.kh.spring.common.exception.HandlableException;
 import com.kh.spring.common.validator.ValidateResult;
 import com.kh.spring.member.model.dto.Member;
 import com.kh.spring.member.model.service.MemberService;
+import com.kh.spring.member.model.service.MemberServiceImpl;
 import com.kh.spring.member.validator.JoinForm;
 import com.kh.spring.member.validator.JoinFormValidator;
 
@@ -64,8 +65,8 @@ public class MemberController {
 	
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	private MemberService memberService;
-	private JoinFormValidator joinFormValidator;
+	private final MemberService memberService;
+	private final JoinFormValidator joinFormValidator;
 	
 	public MemberController(MemberService memberService, JoinFormValidator joinFormValidator) {
 		super();

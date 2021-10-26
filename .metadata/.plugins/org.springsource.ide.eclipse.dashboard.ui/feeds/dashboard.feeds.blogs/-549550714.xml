@@ -5,7 +5,77 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-10-21T22:27:00Z</updated>
+  <updated>2021-10-25T16:00:00Z</updated>
+  <entry>
+    <title>Spot every Spring Boot application issue on the spot using AppDynamics!</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/10/25/spot-every-spring-boot-application-issue-on-the-spot-using-appdynamics" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-10-22:4580</id>
+    <updated>2021-10-25T16:00:00Z</updated>
+    <content type="html">&lt;p&gt;Today, we are excited to announce the integration of AppDynamics in the Azure Spring Cloud for full stack observability.&lt;/p&gt;
+&lt;p&gt;Over the past 20 months, we worked with many enterprise customers to learn about the scenarios they face. Many of these customers have thousands of Spring Boot applications running in on-premises data centers. As they migrate these applications to the cloud, they need to instrument them for application performance monitoring (APM) using solutions their developers are familiar with and have been using for years. In addition, they must ensure continuity for desktop and mobile applications that are already pre-instrumented for end-to-end monitoring using agents like AppDynamics, which automatically discovers and maps all applications, microservices, and infrastructure as well as any dependencies in dynamic hybrid, multi-cloud environments. With the integration of AppDynamics in Azure Spring Cloud, you can continue your journey and easily instrument your Spring Boot applications with AppDynamics. &lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Our deployment of Azure Spring Cloud is just one component of a much broader multi-region, multi-cloud architecture. We¡¯ve used AppDynamics at Digital Realty for several years and had a strong desire to have this single pane of glass to capture performance metrics and monitor availability across the full stack. But not only that, AppDynamics is a powerful APM tool that is one component of adopting an event-driven architecture. We are experimenting with self-healing and AIOps and need to expand our capabilities in this area, which we can now do.&amp;rdquo; &amp;ndash; Devon Yost, Enterprise Architect, &lt;a href="https://www.digitalrealty.com/"&gt;Digital Realty Trust&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;As our customers look to modernize their applications and leverage the ease of use and scaling of cloud platforms like Azure Spring Cloud, the need for full stack observability is more important than ever. Many of Presidio¡¯s customers leverage the instrumentation capabilities of AppDynamics to run their Spring Boot applications in the high performing, cost efficient, and highly available manner that their businesses demand. As they plan their migrations to Azure and the Azure Spring Cloud Platform, they will need more than ever consistency of insights and visibility into their applications. Azure Spring Cloud support for AppDynamics brings together the two platforms and gives Presidio and its customers a clear path forward.&amp;rdquo; &amp;ndash; Rich Gondek, Senior Technical Director, Digital Business Solutions and Services, &lt;a href="https://www.presidio.com/"&gt;Presidio&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;¡°I¡¯m excited by our continued partnership with Microsoft. AppDynamics will provide developers working within Azure Spring Cloud with real-time visibility, with correlated insights that enable them to isolate the root cause of any performance issues and optimize microservices with context to the business impact.¡± &amp;ndash; Gregg Ostrowski, Executive CTO at &lt;a href="https://www.appdynamics.com/"&gt;AppDynamics&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;¡°Microsoft is committed to making it easier for Spring developers to run their apps at scale on Azure. AppDynamics is a critical part of full stack observability for many of our customers, and through our partnership they can now get this functionality integrated into Azure Spring Cloud. Supporting APM tools of choice for developers?like AppDynamics?minimizes change so they can focus on delivering new capabilities.¡± ? Julia Liuson, Corporate Vice President, Developer Division, &lt;a href="https://www.microsoft.com/en-us/"&gt;Microsoft&lt;/a&gt;&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/4dZuRX5bNAs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;The ability to observe and correlate applications to the infrastructure, network, and security throughout the entire IT stack is now essential in a digitally transformed world. Technologists demand full-stack observability so they can foresee issues before they affect customers and the business. At the same time, developers continue to innovate and evolve the IT stack by adopting the latest and most agile cloud platforms like Azure Spring Cloud to deploy and run applications at scale quickly and easily. As they do, it is critical that they can move rapidly towards full-stack visibility, insights and actions transforming siloed data into actionable insights that provide shared context to IT teams so they can deliver exceptional digital experiences, optimize for cost and performance, and maximize digital business revenue. &lt;/p&gt;
+&lt;p&gt;AppDynamics and Microsoft continue to partner together to ensure that Azure customers can maintain that level of business observability with cloud-native applications on Azure. Now, customers can observe what matters most across their services and workloads deployed on Azure Spring Cloud using AppDynamics &amp;ndash; with no code changes required.&lt;/p&gt;
+&lt;img  src="https://raw.githubusercontent.com/joshlong/blog-images/master/spot-the-app-issue-with-appdynamics-10-25-2021/AppDynamics-bar.jpg"/&gt;
+&lt;p&gt;Activating the AppDynamics agent in an Azure Spring Cloud deployment is as simple as configuring the JVM options and environment variables when deploying a service via the Azure CLI.&lt;/p&gt;
+&lt;img width = "600" src="https://raw.githubusercontent.com/joshlong/blog-images/master/spot-the-app-issue-with-appdynamics-10-25-2021/01-activate-with-az.jpg"/&gt;
+&lt;p&gt;&lt;em&gt;Figure 1 - shows Azure CLI command to activate AppDynamics as part a deployment&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The AppDynamics agent can also be activated within Azure Spring Cloud through the Azure Portal, by utilizing Azure Resource Manager (ARM) Templates, Bicep Templates, or via Terraform.&lt;/p&gt;
+&lt;p&gt;Upon activation, open the AppDynamics Portal to begin monitoring. In the view shown below, AppDynamics shows all the Spring Boot application in Azure Spring Cloud.&lt;/p&gt;
+&lt;img width = "600" src="https://raw.githubusercontent.com/joshlong/blog-images/master/spot-the-app-issue-with-appdynamics-10-25-2021/02-birds-eye-view-of-apps.jpg"/&gt;
+&lt;p&gt;&lt;em&gt;Figure 2 - shows all the Spring Boot applications running in a production workload&lt;/em&gt; &lt;/p&gt;
+&lt;p&gt;You can also see automated flow maps that show the flow of data through your applications, revealing Spring Boot apps and their dependencies and the exact locations of any issues to be addressed to mitigate business impact. In the view shown below, automated flow maps are automatically available to you ? no additional configuration required.&lt;/p&gt;
+&lt;img width = "600" src="https://raw.githubusercontent.com/joshlong/blog-images/master/spot-the-app-issue-with-appdynamics-10-25-2021/03-api-gateway.jpg"/&gt;
+&lt;p&gt;&lt;em&gt;Figure 3 - shows automated app flow maps for Spring Boot applications and their dependencies&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;AppDynamics traces key business transactions based on production application behavior. It dynamically baselines performance and automatically discovers what is normal, so customers and developers get alerts only when thresholds are exceeded. In the view shown below, it shows the flow of data from api-gateway app to customers-services app, and then to a MySQL database.&lt;/p&gt;
+&lt;img width = "600" src="https://raw.githubusercontent.com/joshlong/blog-images/master/spot-the-app-issue-with-appdynamics-10-25-2021/04-customers-service.jpg" /&gt;
+&lt;p&gt;&lt;em&gt;Figure 4 - shows flow of data from one Spring Boot app to another Spring Boot app, and then to a MySQL database&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;You can also get deep diagnostics such as full call stacks and granular method-level code details and database queries. You can turn on Development Mode for occasional troubleshooting, in which certain default limits on the data that AppDynamics collects are turned off, giving you with additional visibility on application activities. In the view shown below, we are zooming into all the database calls, in the last few hours, there were about 5M calls with good response times.&lt;/p&gt;
+&lt;img width = "600" src="https://raw.githubusercontent.com/joshlong/blog-images/master/spot-the-app-issue-with-appdynamics-10-25-2021/05-customer-service-db-calls.jpg"/&gt;
+&lt;p&gt;&lt;em&gt;Figure 5 ? zooms into all the database calls from a Spring Boot application&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;You can look for slowest database calls. In the view shown below for customers-service app, these are the slowest database calls ? particularly, plenty of time is spent in setting up connections. As always, there is some room for improvement.&lt;/p&gt;
+&lt;img width = "600" src="https://raw.githubusercontent.com/joshlong/blog-images/master/spot-the-app-issue-with-appdynamics-10-25-2021/06-slowest-db-calls-from-customers-service.jpg" /&gt;
+&lt;p&gt;&lt;em&gt;Figure 6 - shows slowest database calls from a Spring Boot application&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;AppDynamics also has a good JVM metric browser where you can look at JVM metrics across time. In the view shown below, you can look at number of JVM threads versus JVM CPU usage. Certainly, you can draw out many more insights through the metric browser.&lt;/p&gt;
+&lt;img width = "600" src="https://raw.githubusercontent.com/joshlong/blog-images/master/spot-the-app-issue-with-appdynamics-10-25-2021/07-customers-service-jvm-metric-browser.jpg" /&gt;
+&lt;p&gt;&lt;em&gt;Figure 7 ? shows JVM Metrics across time in AppDynamics Metric Browser&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;By using AppDynamics, you can enable seamless collaboration among developers, operators, and business teams. Unified monitoring and real-time insights bring these teams together to maintain application performance, the user experiences and business performance.&lt;/p&gt;&lt;h2&gt;&lt;a href="#build-your-solutions-and-monitor-them-today" class="anchor" name="build-your-solutions-and-monitor-them-today"&gt;&lt;/a&gt;Build your solutions and monitor them today!&lt;/h2&gt;
+&lt;p&gt;Azure Spring Cloud is jointly built, operated, and supported by Microsoft and VMware. It is a fully managed service for Spring Boot applications that abstracts away the complexity of infrastructure and Spring Cloud middleware management, so you can focus on building your business logic and let Azure take care of dynamic scaling, patches, security, compliance, and high availability. With a few steps, you can provision Azure Spring Cloud, create applications, deploy, and scale Spring Boot applications and start monitoring in minutes. We will continue to bring more developer-friendly and enterprise-ready features to Azure Spring Cloud. We would love to hear how you are building impactful solutions using Azure Spring Cloud&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://aka.ms/Start-AppDynamics"&gt;Start monitoring&lt;/a&gt; your Spring Boot applications with AppDynamics!&lt;/p&gt;&lt;h3&gt;&lt;a href="#resources" class="anchor" name="resources"&gt;&lt;/a&gt;Resources&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Learn using an &lt;a href="https://docs.microsoft.com/en-us/learn/modules/azure-spring-cloud-workshop/"&gt;MS Learn module&lt;/a&gt; or &lt;a href="https://github.com/microsoft/azure-spring-cloud-training"&gt;self-paced workshop&lt;/a&gt; on GitHub&lt;/li&gt;
+  &lt;li&gt;Learn &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/"&gt;more&lt;/a&gt; about implementing solutions on Azure Spring Cloud&lt;/li&gt;
+  &lt;li&gt;See related &lt;a href="https://docs.appdynamics.com/21.9/en/application-monitoring/install-app-server-agents/java-agent/install-the-java-agent/monitor-azure-spring-cloud-with-java-agent"&gt;document published&lt;/a&gt; by AppDynamics&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/Azure-Samples/spring-petclinic-microservices"&gt;Deploy&lt;/a&gt; a distributed version of Spring Petclinic application&lt;/li&gt;
+  &lt;li&gt;Deploy Spring Boot applications by leveraging enterprise best practices ? &lt;a href="https://docs.microsoft.com/en-us/azure/spring-cloud/reference-architecture"&gt;Azure Spring Cloud Reference Architecture&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Migrate your &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/migration/migrate-spring-boot-to-azure-spring-cloud"&gt;Spring Boot&lt;/a&gt;, &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-cloud"&gt;Spring Cloud&lt;/a&gt; and &lt;a href="https://aka.ms/migrate-tomcat-to-azure-spring-cloud-service"&gt;Tomcat&lt;/a&gt; applications to Azure Spring Cloud&lt;/li&gt;
+  &lt;li&gt;Wire Spring applications to &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/"&gt;interact with Azure services&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;For feedback and questions, please &lt;a href="mailto:AzureSpringCloud-Talk@service.microsoft.com"&gt;e-mail us&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Square 0.4.0-M3 is available.</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/10/25/spring-cloud-square-0-4-0-m3-is-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Olga Maciaszek-Sharma</name>
+    </author>
+    <id>tag:spring.io,2021-10-25:4581</id>
+    <updated>2021-10-25T11:00:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the Milestone 3 (M3) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud Square&lt;/a&gt; 0.4.0 is available today. The release can be found in &lt;a href="https://repo.spring.io/milestone/"&gt;Spring Milestone&lt;/a&gt; repository. You can check out the 0.4.0-M3 &lt;a href="https://github.com/spring-cloud-incubator/spring-cloud-square/releases/tag/v0.4.0-M3"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is primarily a bugfix release. See all issues included in this release &lt;a href="https://github.com/spring-cloud-incubator/spring-cloud-square/milestone/3?closed=1"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The documentation for this milestone can be found &lt;a href="https://spring-cloud-incubator.github.io/spring-cloud-square/docs/current/reference/html/index.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: RabbitMQ and Weaveworks founder Alexis Richardson on RabbitMQ, Pivotal, Spring, Kubernetes, and FluxCD</title>
     <link rel="alternate" href="https://spring.io/blog/2021/10/21/a-bootiful-podcast-rabbitmq-and-weaveworks-founder-alexis-richardson-on-rabbitmq-pivotal-spring-kubernetes-and-fluxcd" />
@@ -786,181 +856,6 @@ Let me know if you would like me to cover specific topics.&lt;/p&gt;
     <updated>2021-10-06T07:00:00Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! In this installment we look at the new Spring GraphQL project.&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/kVSYVhmvNCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - October 5th, 2021</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/10/05/this-week-in-spring-october-5th-2021" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-10-05:4563</id>
-    <updated>2021-10-05T07:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! Life&amp;rsquo;s been busy but fun this last week. I&amp;rsquo;ve been knee-deep in video production! I&amp;rsquo;ve got a lot of fun &lt;a href="https://twitter.com/SpringTipsLive"&gt;&lt;em&gt;Spring Tips&lt;/em&gt;&lt;/a&gt; installments lined up or in production at the moment, and I can&amp;rsquo;t wait for you to see &amp;rsquo;em! &lt;/p&gt;
-&lt;p&gt;I also spent much of last week with my buddy Matt Raible and we made JHipster work with Spring Native, and I&amp;rsquo;m still giddy as can be about the newly opened possibilities. (More on that below) &lt;/p&gt;
-&lt;p&gt;How are you doin&amp;rsquo;, otherwise? I hope you&amp;rsquo;re doing well! &lt;/p&gt;
-&lt;p&gt;Now then, we&amp;rsquo;ve got a lot to cover and oh-so little time in which to do it. Let&amp;rsquo;s goo! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;In this installment of &lt;a href="https://spring.io/blog/2021/09/29/spring-tips-bootiful-edge-services"&gt;&lt;em&gt;Spring Tips&lt;/em&gt;, I look at &amp;ldquo;Bootiful Edge Services&amp;rdquo;&lt;/a&gt; with Spring GraphQL, Spring Cloud Gateway, and Reactive Programming.&lt;/li&gt;
-  &lt;li&gt;In this installment of a &lt;a href="https://spring.io/blog/2021/09/30/a-bootiful-podcast-spring-data-engineer-christoph-strobl-on-mongodb-redis-graphql-and-spring-native"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I talk to Spring Data engineer Christoph Strobl on MongoDB, Redis, GraphQL and Spring Native &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.linkedin.com/pulse/jhipster-works-spring-native-matt-raible"&gt;JHipster Works with Spring Native (Kinda)!&lt;/a&gt; Last week, Matt Raible and I presented at the (virtual) San Francisco Java User Group (in person). The event was a lot of fun because Matt and I enjoy working together. The goal was to deliver a presentation on the (experimental!) Spring Native project which enables GraalVM builds for Spring Boot-based applications. But Matt wanted to make JHipster work! So we hacked. And hacked. And hacked. Finally we ended up with an application that worked with GraalVM, sans only the OpenAPI support. It was &lt;em&gt;awesome&lt;/em&gt;. It&amp;rsquo;s not as smooth as it could be, of course, but it&amp;rsquo;s &lt;em&gt;something&lt;/em&gt;. Check it out!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://rieckpil.de/common-pitfalls-when-testing-spring-boot-applications/?amp"&gt;Common Pitfalls When Testing Spring Boot Applications&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2021/09/enabling-next-gen-experiences-with-the-lumen-platform.html"&gt;Enabling Next-Gen Experiences with the Lumen Platform&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/10/04/spring-cloud-2021-0-0-m2-codename-jubilee-is-available"&gt;Spring Cloud 2021.0.0-M2 (codename Jubilee) is Available.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://developer.okta.com/blog/2021/09/16/spring-native-okta-starter"&gt;Spring Native in Action with the Okta Spring Boot Starter&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I just learned about &lt;em&gt;JobRunr&lt;/em&gt;, a job scheduler that has &lt;a href="https://www.jobrunr.io/en/documentation/configuration/spring/"&gt;a nice Spring Boot starter&lt;/a&gt;. You can use this job scheduler with all sorts of infrastructure thanks to its &lt;code&gt;StorageManager&lt;/code&gt; abstraction. Could be good! This is an alternative, of course, to things like the Quartz integration in Spring and the &lt;code&gt;@Scheduled&lt;/code&gt; annotation in Spring.&lt;/li&gt;
-  &lt;li&gt;Did you try out the more recent &lt;a href="https://github.com/spring-io/initializr/blob/main/README.adoc"&gt;release of the Spring Initializr yet&lt;/a&gt;?&lt;/li&gt;
-  &lt;li&gt;I like this more recent tutorial showing how to connect a &lt;a href="https://www.youtube.com/watch?v=7I37-awpaGg"&gt;Spring Boot application to DataStax Astra&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud 2021.0.0-M2 (codename Jubilee) is Available.</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/10/04/spring-cloud-2021-0-0-m2-codename-jubilee-is-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Spencer Gibb</name>
-    </author>
-    <id>tag:spring.io,2021-10-04:4562</id>
-    <updated>2021-10-04T16:59:33Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the Milestone 2 (M2) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud 2021.0&lt;/a&gt; Release Train (codename Jubilee) is available today. The release can be found in &lt;a href="https://repo.spring.io/milestone/"&gt;Spring Milestone&lt;/a&gt; repository. You can check out the 2021.0.0-M2 &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-2021.0-Release-Notes"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-2021-0-0-m2-release-train" class="anchor" name="notable-changes-in-the-2021-0-0-m2-release-train"&gt;&lt;/a&gt;Notable Changes in the 2021.0.0-M2 Release Train&lt;/h2&gt;
-&lt;p&gt;Milestone 2 is compatible with Spring Boot 2.6.0-M3.&lt;/p&gt;
-&lt;p&gt;See the &lt;a href="https://github.com/orgs/spring-cloud/projects/65"&gt;project page&lt;/a&gt; for all the issues and pull requests included in this release.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
-&lt;p&gt;Adjusts &lt;code&gt;NamedContextFactory&lt;/code&gt; API for Sleuth.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-config" class="anchor" name="spring-cloud-config"&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
-&lt;p&gt;Allow types in JDBC Environment repository besides String &lt;a href="https://github.com/spring-cloud/spring-cloud-config/issues/1952"&gt;issue 1952&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-contract" class="anchor" name="spring-cloud-contract"&gt;&lt;/a&gt;Spring Cloud Contract&lt;/h3&gt;
-&lt;p&gt;UUID v4 and case insnsitivity &lt;a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1688"&gt;issue 1688&lt;/a&gt;. Allow custom &lt;code&gt;build.gradle&lt;/code&gt; when using standalone docker image &lt;a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1672"&gt;issue 1672&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-gateway" class="anchor" name="spring-cloud-gateway"&gt;&lt;/a&gt;Spring Cloud Gateway&lt;/h3&gt;
-&lt;p&gt;Support for the HTTP 2 protocol, &lt;a href="https://github.com/spring-cloud/spring-cloud-gateway/issues/7"&gt;issue 7&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-kubernetes" class="anchor" name="spring-cloud-kubernetes"&gt;&lt;/a&gt;Spring Cloud Kubernetes&lt;/h3&gt;
-&lt;p&gt;Consitency between different java clients.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-openfeign" class="anchor" name="spring-cloud-openfeign"&gt;&lt;/a&gt;Spring Cloud Openfeign&lt;/h3&gt;
-&lt;p&gt;Adds support for &lt;code&gt;@CookieValue&lt;/code&gt; annotation &lt;a href="https://github.com/spring-cloud/spring-cloud-openfeign/pull/604"&gt;issue 604&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-sleuth" class="anchor" name="spring-cloud-sleuth"&gt;&lt;/a&gt;Spring Cloud Sleuth&lt;/h3&gt;
-&lt;p&gt;Adds Spring Kafka instrumentation &lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/2013"&gt;issue 2013&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#included-modules" class="anchor" name="included-modules"&gt;&lt;/a&gt;Included Modules&lt;/h3&gt;
-&lt;p&gt;The following modules were updated as part of 2021.0.0-M2:&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Module &lt;/th&gt;
-      &lt;th&gt;Version &lt;/th&gt;
-      &lt;th&gt;Issues&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Zookeeper &lt;/td&gt;
-      &lt;td&gt;3.1.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
-      &lt;td&gt;3.1.0-M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/93?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Kubernetes &lt;/td&gt;
-      &lt;td&gt;2.1.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Task &lt;/td&gt;
-      &lt;td&gt;2.4.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Bus &lt;/td&gt;
-      &lt;td&gt;3.1.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Sleuth &lt;/td&gt;
-      &lt;td&gt;3.1.0-M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/93?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Cli &lt;/td&gt;
-      &lt;td&gt;3.1.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Starter Build &lt;/td&gt;
-      &lt;td&gt;2021.0.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Vault &lt;/td&gt;
-      &lt;td&gt;3.1.0-M2 &lt;/td&gt;
-      &lt;td&gt;&amp;nbsp;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
-      &lt;td&gt;3.1.0-M2 &lt;/td&gt;
-      &lt;td&gt;(&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/79?closed=1"&gt;issues&lt;/a&gt;)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;As always, we welcome feedback on &lt;a href="https://github.com/spring-cloud/"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, or on &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#getting-started" class="anchor" name="getting-started"&gt;&lt;/a&gt;Getting Started&lt;/h2&gt;
-&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;repositories&amp;gt;&#xD;
-    &amp;lt;repository&amp;gt;&#xD;
-        &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;&#xD;
-        &amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt;&#xD;
-        &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
-        &amp;lt;snapshots&amp;gt;&#xD;
-            &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;&#xD;
-        &amp;lt;/snapshots&amp;gt;&#xD;
-    &amp;lt;/repository&amp;gt;&#xD;
-&amp;lt;/repositories&amp;gt;&#xD;
-&#xD;
-&amp;lt;dependencyManagement&amp;gt;&#xD;
-    &amp;lt;dependencies&amp;gt;&#xD;
-        &amp;lt;dependency&amp;gt;&#xD;
-            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
-            &amp;lt;version&amp;gt;2021.0.0-M2&amp;lt;/version&amp;gt;&#xD;
-            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
-            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
-        &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;/dependencies&amp;gt;&#xD;
-&amp;lt;/dependencyManagement&amp;gt;&#xD;
-&#xD;
-&amp;lt;dependencies&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;dependency&amp;gt;&#xD;
-        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
-    &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;!-- ... --&amp;gt;&#xD;
-&amp;lt;/dependencies&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To get started with Gradle:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint groovy"&gt;plugins {&#xD;
-  id &amp;#39;org.springframework.boot&amp;#39; version &amp;#39;2.6.0.M3&amp;#39;&#xD;
-  id &amp;#39;io.spring.dependency-management&amp;#39; version &amp;#39;1.0.11.RELEASE&amp;#39;&#xD;
-  id &amp;#39;java&amp;#39;&#xD;
-}&#xD;
-&#xD;
-repositories {&#xD;
-  mavenCentral()&#xD;
-  maven { url &amp;#39;https://repo.spring.io/milestone&amp;#39; }&#xD;
-}&#xD;
-&#xD;
-ext {&#xD;
-  set(&amp;#39;springCloudVersion&amp;#39;, &amp;quot;2021.0.0-M2&amp;quot;)&#xD;
-}&#xD;
-&#xD;
-dependencyManagement {&#xD;
-  imports {&#xD;
-    mavenBom &amp;quot;org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}&amp;quot;&#xD;
-  }&#xD;
-}&#xD;
-&#xD;
-dependencies {&#xD;
-  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
-  compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
-  //...&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
