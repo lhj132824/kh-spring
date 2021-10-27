@@ -7,9 +7,9 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource">
-		<property name="user" value="BM"/>
-		<property name="password" value="1234"/>
-		<property name="URL" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="user" value="ADMIN"/>
+		<property name="password" value="Rngusgowh123"/>
+		<property name="URL" value="jdbc:oracle:thin:@possdb_high?TNS_ADMIN=C:/CODE/e_servlet/Wallet_possDB"/>
 	</bean>	
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

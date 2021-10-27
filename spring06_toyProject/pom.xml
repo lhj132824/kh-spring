@@ -113,11 +113,30 @@
 			<version>1</version>
 		</dependency>
 		<dependency>
-		    <groupId>oracle</groupId>
-		    <artifactId>ojdbc6</artifactId>
-		    <version>11.2.0.3</version>
-		</dependency>
-		
+	       <groupId>com.oracle.database.jdbc</groupId>
+	       <artifactId>ojdbc8</artifactId>
+	       <version>19.8.0.0</version>
+	   </dependency>
+	   <dependency>
+	       <groupId>com.oracle.database.jdbc</groupId>
+	       <artifactId>ucp</artifactId>
+	       <version>19.8.0.0</version>
+	   </dependency>
+	   <dependency>
+	       <groupId>com.oracle.database.security</groupId>
+	       <artifactId>oraclepki</artifactId>
+	       <version>19.8.0.0</version>
+	   </dependency>
+	   <dependency>
+	       <groupId>com.oracle.database.security</groupId>
+	       <artifactId>osdt_cert</artifactId>
+	       <version>19.8.0.0</version>
+	   </dependency>
+	   <dependency>
+	       <groupId>com.oracle.database.security</groupId>
+	       <artifactId>osdt_core</artifactId>
+	       <version>19.8.0.0</version>
+	   </dependency>
 		<!-- json parse -->
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
 		<dependency>
@@ -221,7 +240,13 @@
 		    <version>1.3</version>
 		    <scope>test</scope>
 		</dependency>
-		
+		<!-- 웹 크롤링 -->
+		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+		<dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		    <version>1.14.3</version>
+		</dependency>
 	</dependencies>
     <build>
         <plugins>
